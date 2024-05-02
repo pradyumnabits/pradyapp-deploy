@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: pradyapp
-        image: inventory-ms:latest
-        imagePullPolicy: Never
+        image: nanajanashia/argocd-app:1.2
+        imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 8080
