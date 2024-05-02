@@ -1,0 +1,2 @@
+# pradyapp-deploy
+pradyapp deploy
