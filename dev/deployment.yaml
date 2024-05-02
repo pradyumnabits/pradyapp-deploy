@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pradyapp
+spec:
+  selector:
+    matchLabels:
+      app: pradyapp
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: pradyapp
+    spec:
+      containers:
+      - name: pradyapp
+        image: nanajanashia/argocd-app:1.2
+        ports:
+        - containerPort: 8080
