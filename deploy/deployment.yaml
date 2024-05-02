@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: pradyapp
-        image: nanajanashia/argocd-app:1.2
+        image: nanajanashia/argocd-app:1.1
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 8080
