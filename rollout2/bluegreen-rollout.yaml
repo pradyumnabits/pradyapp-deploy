@@ -9,7 +9,7 @@ spec:
   revisionHistoryLimit: 1
   selector:
     matchLabels:
-      app: pradyapp-bluegreen
+      app: pradyappbg
   template:
     metadata:
       labels:
