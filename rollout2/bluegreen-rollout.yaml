@@ -1,9 +1,9 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Rollout
 metadata:
-  name: pradyapp-bluegreen
+  name: pradyappbg
   labels:
-    app: pradyapp-bluegreen
+    app: pradyappbg
 spec:
   replicas: 2
   revisionHistoryLimit: 1
@@ -13,10 +13,10 @@ spec:
   template:
     metadata:
       labels:
-        app: pradyapp-bluegreen
+        app: pradyappbg
     spec:
       containers:
-        - name: pradyapp-bluegreen
+        - name: pradyappbg
           image: argoproj/rollouts-demo:green
           imagePullPolicy: Always
           ports:
@@ -26,5 +26,5 @@ spec:
   strategy:
     blueGreen:
       autoPromotionEnabled: false
-      activeService: bluegreen-demo
-      previewService: bluegreen-demo-preview
+      activeService: pradyappbg-service
+      previewService: pradyappbg-service-preview
