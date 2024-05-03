@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: prady-app
+  name: pradyapp2
 spec:
   selector:
     matchLabels:
@@ -10,10 +10,10 @@ spec:
   template:
     metadata:
       labels:
-        app: prady-app
+        app: pradyapp2
     spec:
       containers:
-      - name: prady-app
+      - name: pradyapp2
         image: inventory-ms:latest
         imagePullPolicy: Never
         ports:
