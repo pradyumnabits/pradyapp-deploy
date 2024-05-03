@@ -42,7 +42,7 @@ spec:
       containers:
         - name: pradyappbg
           image: inventory-ms:latest
-          imagePullPolicy: Always
+          imagePullPolicy: Never
           ports:
             - name: http
               containerPort: 8080
