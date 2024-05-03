@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: pradyapp-service
+spec:
+  selector:
+    app: pradyapp-bluegreen
+  ports:
+  - port: 8080
+    protocol: TCP
+    targetPort: 8080
+  
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: pradyapp-service-preview
+spec:
+  selector:
+    app: pradyapp-bluegreen
+  ports:
+  - port: 8080
+    protocol: TCP
+    targetPort: 8080
+  

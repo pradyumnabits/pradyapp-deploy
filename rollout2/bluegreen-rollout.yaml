@@ -1,0 +1,30 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout
+metadata:
+  name: pradyapp-bluegreen
+  labels:
+    app: pradyapp-bluegreen
+spec:
+  replicas: 2
+  revisionHistoryLimit: 1
+  selector:
+    matchLabels:
+      app: pradyapp-bluegreen
+  template:
+    metadata:
+      labels:
+        app: pradyapp-bluegreen
+    spec:
+      containers:
+        - name: pradyapp-bluegreen
+          image: argoproj/rollouts-demo:green
+          imagePullPolicy: Always
+          ports:
+            - name: http
+              containerPort: 8080
+              protocol: TCP
+  strategy:
+    blueGreen:
+      autoPromotionEnabled: false
+      activeService: bluegreen-demo
+      previewService: bluegreen-demo-preview

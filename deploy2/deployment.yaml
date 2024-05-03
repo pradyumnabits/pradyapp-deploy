@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pradyapp2
+spec:
+  selector:
+    matchLabels:
+      app: pradyapp2
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: pradyapp2
+    spec:
+      containers:
+      - name: pradyapp2
+        image: inventory-ms:latest
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 8080
