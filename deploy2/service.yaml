@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: prady-app-service
+  name: pradyapp2-service
 spec:
   selector:
-    app: prady-app
+    app: pradyapp2
   ports:
   - port: 8080
     protocol: TCP
